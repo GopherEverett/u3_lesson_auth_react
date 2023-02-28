@@ -42,15 +42,18 @@ const verifyToken = (req, res, next) => {
 }
 
 const stripToken = (req, res, next) => {
-  const token = req.headers['authorization'].split(' ')[1]
-  // Gets the token from the request headers {authorization: Bearer Some-Token}
-  // Splits the value of the authorization header
-  if (token) {
-    res.locals.token = token
-    //   If the token exists we add it to the request lifecycle state
-    return next()
+  try {
+    const token = req.headers['authorization'].split(' ')[1]
+    // Gets the token from the request headers {authorization: Bearer Some-Token}
+    // Splits the value of the authorization header
+    if (token) {
+      res.locals.token = token
+      //   If the token exists we add it to the request lifecycle state
+      return next()
+    }
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
-  res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
 }
 
 module.exports = {
