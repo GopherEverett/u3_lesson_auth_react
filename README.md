@@ -8,22 +8,22 @@ In this lesson, we'll learn how to integrate authentication into our React clien
 
 ## Getting Started
 
-- `Fork` and `Clone`
+- `fork` and `clone`
 - `npm install` to install our back-end dependencies
-- `npm run dev` to spin up our Express server (it will be interacting with our database we set up in the [last lesson](https://github.com/SEI-R-9-19/u3_lesson_sequelize_auth))
+- `npm run dev` to spin up our Express server (it will be interacting with our database we set up in the [last lesson](https://github.com/SEI-R-1-9/u3_lesson_sequelize_auth))
 - `cd client` to move into our front-end
 - `npm install` to install our front-end dependencies
 - `npm start` to spin up our React app
 
-## Understanding The LocalStorage API
+## Understanding The localStorage API
 
 In order to persist a users token, we'll need to use something called `localStorage`. `localStorage` is an in-browser memory store.
 
-### What Is LocalStorage?
+### What Is localStorage?
 
 > localStorage is an API that allows JavaScript sites and apps to save key/value pairs in a web browser with no expiration date. This means the data stored in the browser will persist even after the browser window is closed.
 
-### How Does LocalStorage Work?
+### How Does localStorage Work?
 
 To use `localStorage` in your web applications, there are five methods to choose from:
 
